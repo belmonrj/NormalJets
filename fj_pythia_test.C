@@ -23,10 +23,23 @@ using namespace std;
 
 int main()
 {
-
   // initialize a new ROOT histogram to fill with the loop
+
+  const int n_jr = 6;
+  const int n_alg = 1;
+  double jet_radii[n_jr] = {0.2,0.3,0.4,0.5,0.6,0.7};
+
   TH1D* pTr = new TH1D("pTr", "Transverse Momentum", 100, 0, 100);
   TH1D* pTj = new TH1D("pTj", "Jet Transverse Momentum", 100, 0, 100);
+  // = new TH1D("pTr", "Transverse Momentum", 100, 0, 100);
+  TH1D* pTj_set[n_jr][n_alg];
+  for ( int i = 0; i < n_jr; ++i )
+    {
+      for ( int j = 0; j < n_alg; ++j )
+        {
+          pTj_set[i][j] = new TH1D(Form("pTj_set_R%d_A%d",i,j), "", 100, 0, 100);
+        }
+    }
 
 
   // Generator. Process selection. LHC initialization.
@@ -42,7 +55,9 @@ int main()
   // --- Main event loop
   // -------------------
 
-  for ( int iEvent = 0; iEvent < 2; ++iEvent )
+  int n_events = 2;
+
+  for ( int iEvent = 0; iEvent < n_events; ++iEvent )
     {
 
       // --- get ready for the next event
@@ -66,14 +81,14 @@ int main()
           // double phi = p.phi();
           // double eta = p.eta();
           double pT  = p.pT();
-	  pTr->Fill( pT );
+          pTr->Fill( pT ); // pT distribution of single particles
 
           // --- double check these
           double px = p.px();
           double py = p.py();
           double pz = p.pz();
-	  double E = p.e();
-
+          //double E = p.e(); // MC only
+          double E = sqrt(px*px + py*py + pz*pz); // can do this, assuming m=0, or assume m=m_pion
 
           // add the particles to the FastJet PseudoJet object
           particles.push_back( PseudoJet( px, py, pz, E) );
@@ -84,29 +99,64 @@ int main()
       // --- Done collecting particles from event, now do jet stuff
       // ----------------------------------------------------------
 
-      // --- choose a jet definition
-      double R = 0.7;
-      JetDefinition jet_def(antikt_algorithm, R);
-
-      // --- run the clustering, extract the jets
+      JetDefinition jet_def(antikt_algorithm, 0.7);
       ClusterSequence cs(particles, jet_def);
       vector<PseudoJet> jets = sorted_by_pt(cs.inclusive_jets());
 
-      // --- print out some infos
-      cout << "Clustering with " << jet_def.description() << endl;
+      // --- choose a jet definition
+      JetDefinition jet_def_antikt_R0(antikt_algorithm, jet_radii[0]);
+      JetDefinition jet_def_antikt_R1(antikt_algorithm, jet_radii[1]);
+      JetDefinition jet_def_antikt_R2(antikt_algorithm, jet_radii[2]);
+      JetDefinition jet_def_antikt_R3(antikt_algorithm, jet_radii[3]);
+      JetDefinition jet_def_antikt_R4(antikt_algorithm, jet_radii[4]);
+      JetDefinition jet_def_antikt_R5(antikt_algorithm, jet_radii[5]);
 
-      // --- print the jets
-      cout <<   "        pt y phi" << endl;
-      for (unsigned i = 0; i < jets.size(); i++)
+      // --- run the clustering
+      ClusterSequence cs_antikt_R0(particles, jet_def_antikt_R0);
+      ClusterSequence cs_antikt_R1(particles, jet_def_antikt_R1);
+      ClusterSequence cs_antikt_R2(particles, jet_def_antikt_R2);
+      ClusterSequence cs_antikt_R3(particles, jet_def_antikt_R3);
+      ClusterSequence cs_antikt_R4(particles, jet_def_antikt_R4);
+      ClusterSequence cs_antikt_R5(particles, jet_def_antikt_R5);
+
+      // --- get the jets from the clusters
+      vector<PseudoJet> jets_antikt_R0 = sorted_by_pt(cs_antikt_R0.inclusive_jets());
+      vector<PseudoJet> jets_antikt_R1 = sorted_by_pt(cs_antikt_R1.inclusive_jets());
+      vector<PseudoJet> jets_antikt_R2 = sorted_by_pt(cs_antikt_R2.inclusive_jets());
+      vector<PseudoJet> jets_antikt_R3 = sorted_by_pt(cs_antikt_R3.inclusive_jets());
+      vector<PseudoJet> jets_antikt_R4 = sorted_by_pt(cs_antikt_R4.inclusive_jets());
+      vector<PseudoJet> jets_antikt_R5 = sorted_by_pt(cs_antikt_R5.inclusive_jets());
+
+      // --- fill the jet pt histograms
+      for ( int i = 0; i < jets_antikt_R0.size(); ++i ) pTj_set[0][0]->Fill(jets_antikt_R0[i].pt());
+      for ( int i = 0; i < jets_antikt_R1.size(); ++i ) pTj_set[1][0]->Fill(jets_antikt_R1[i].pt());
+      for ( int i = 0; i < jets_antikt_R2.size(); ++i ) pTj_set[2][0]->Fill(jets_antikt_R2[i].pt());
+      for ( int i = 0; i < jets_antikt_R3.size(); ++i ) pTj_set[3][0]->Fill(jets_antikt_R3[i].pt());
+      for ( int i = 0; i < jets_antikt_R4.size(); ++i ) pTj_set[4][0]->Fill(jets_antikt_R4[i].pt());
+      for ( int i = 0; i < jets_antikt_R5.size(); ++i ) pTj_set[5][0]->Fill(jets_antikt_R5[i].pt());
+
+      // ----------------------------------------------------------------------------------------------------
+
+      if ( n_events < 6 )
         {
-          cout << "jet " << i << ": "<< jets[i].pt() << " " << jets[i].rap() << " " << jets[i].phi() << endl;
-          vector<PseudoJet> constituents = jets[i].constituents();
-	  pTj->Fill(jets[i].pt());
-          for (unsigned j = 0; j < constituents.size(); j++)
+          // --- print out some infos
+          cout << "Clustering with " << jet_def.description() << endl;
+          // --- print the jets
+          cout <<   "        pt y phi" << endl;
+          for (unsigned i = 0; i < jets.size(); i++)
             {
-              cout << "    constituent " << j << "'s pt: " << constituents[j].pt() << endl;
-            } // loop over jet constituents
-        } // loop over jets
+              cout << "jet " << i << ": "<< jets[i].pt() << " " << jets[i].rap() << " " << jets[i].phi() << endl;
+              vector<PseudoJet> constituents = jets[i].constituents();
+              pTj->Fill(jets[i].pt());
+              int number_of_constituents = constituents.size();
+              for (unsigned j = 0; j < number_of_constituents; j++)
+                {
+                  cout << "    constituent " << j << "'s pt: " << constituents[j].pt() << endl;
+                } // loop over jet constituents
+            } // loop over jets
+        }
+
+      // ----------------------------------------------------------------------------------------------------
 
       // --- all done
 
@@ -120,6 +170,13 @@ int main()
   TFile* JetHistFile = new TFile("testout.root","recreate");
   pTr->Write();
   pTj->Write();
+  for ( int i = 0; i < n_jr; ++i )
+    {
+      for ( int j = 0; j < n_alg; ++j )
+        {
+          pTj_set[i][j]->Write();
+        }
+    }
   JetHistFile->Close();
 
   return 0;
