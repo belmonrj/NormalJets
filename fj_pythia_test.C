@@ -40,7 +40,15 @@ int main()
           pTj_set[i][j] = new TH1D(Form("pTj_set_R%d_A%d",i,j), "", 100, 0, 100);
         }
     }
-
+  
+  TH1D* numConst[n_jr][n_alg]; // = new TH1D("numConst","Constiuets per Jet Radii", 100, 0, 100);
+    for (int k = 0; k < n_jr; ++k)
+    {
+      for ( int j = 0; j < n_alg; ++j)
+	{
+	  numConst[k][j] = new TH1D(Form("numConst_R%d",k),"", 100, 0, 100);
+	}
+    }
 
   // Generator. Process selection. LHC initialization.
   Pythia pythia;
@@ -134,6 +142,14 @@ int main()
       for ( int i = 0; i < jets_antikt_R3.size(); ++i ) pTj_set[3][0]->Fill(jets_antikt_R3[i].pt());
       for ( int i = 0; i < jets_antikt_R4.size(); ++i ) pTj_set[4][0]->Fill(jets_antikt_R4[i].pt());
       for ( int i = 0; i < jets_antikt_R5.size(); ++i ) pTj_set[5][0]->Fill(jets_antikt_R5[i].pt());
+      
+      // --- fill numConst histograms
+      for ( int i = 0; i < jets_antikt_R0.size(); i++ ) numConst[0][0]->Fill(jets_antikt_R0[i].constituents().size());
+      for ( int i = 0; i < jets_antikt_R1.size(); i++ ) numConst[1][0]->Fill(jets_antikt_R1[i].constituents().size());
+      for ( int i = 0; i < jets_antikt_R2.size(); i++ ) numConst[2][0]->Fill(jets_antikt_R2[i].constituents().size());
+      for ( int i = 0; i < jets_antikt_R3.size(); i++ ) numConst[3][0]->Fill(jets_antikt_R3[i].constituents().size());
+      for ( int i = 0; i < jets_antikt_R4.size(); i++ ) numConst[4][0]->Fill(jets_antikt_R4[i].constituents().size());
+      for ( int i = 0; i < jets_antikt_R5.size(); i++ ) numConst[5][0]->Fill(jets_antikt_R5[i].constituents().size());
 
       // ----------------------------------------------------------------------------------------------------
 
@@ -177,6 +193,14 @@ int main()
           pTj_set[i][j]->Write();
         }
     }
+
+for (int i=0; i < n_jr; ++i )
+  {
+    for (int j=0; j < n_alg; ++j)
+      {
+	numConst[i][j]->Write();
+      }
+  }
   JetHistFile->Close();
 
   return 0;
