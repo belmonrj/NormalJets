@@ -40,7 +40,7 @@ int main()
           pTj_set[i][j] = new TH1D(Form("pTj_set_R%d_A%d",i,j), "", 100, 0, 100);
         }
     }
-  
+
   TH1D* numConst[n_jr][n_alg]; // = new TH1D("numConst","Constiuets per Jet Radii", 100, 0, 100);
     for (int k = 0; k < n_jr; ++k)
     {
@@ -142,7 +142,7 @@ int main()
       for ( int i = 0; i < jets_antikt_R3.size(); ++i ) pTj_set[3][0]->Fill(jets_antikt_R3[i].pt());
       for ( int i = 0; i < jets_antikt_R4.size(); ++i ) pTj_set[4][0]->Fill(jets_antikt_R4[i].pt());
       for ( int i = 0; i < jets_antikt_R5.size(); ++i ) pTj_set[5][0]->Fill(jets_antikt_R5[i].pt());
-      
+
       // --- fill numConst histograms
       for ( int i = 0; i < jets_antikt_R0.size(); i++ ) numConst[0][0]->Fill(jets_antikt_R0[i].constituents().size());
       for ( int i = 0; i < jets_antikt_R1.size(); i++ ) numConst[1][0]->Fill(jets_antikt_R1[i].constituents().size());
