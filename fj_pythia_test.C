@@ -136,20 +136,20 @@ int main()
       vector<PseudoJet> jets_antikt_R5 = sorted_by_pt(cs_antikt_R5.inclusive_jets());
 
       // --- fill the jet pt histograms
-      for ( int i = 0; i < jets_antikt_R0.size(); ++i ) pTj_set[0][0]->Fill(jets_antikt_R0[i].pt());
-      for ( int i = 0; i < jets_antikt_R1.size(); ++i ) pTj_set[1][0]->Fill(jets_antikt_R1[i].pt());
-      for ( int i = 0; i < jets_antikt_R2.size(); ++i ) pTj_set[2][0]->Fill(jets_antikt_R2[i].pt());
-      for ( int i = 0; i < jets_antikt_R3.size(); ++i ) pTj_set[3][0]->Fill(jets_antikt_R3[i].pt());
-      for ( int i = 0; i < jets_antikt_R4.size(); ++i ) pTj_set[4][0]->Fill(jets_antikt_R4[i].pt());
-      for ( int i = 0; i < jets_antikt_R5.size(); ++i ) pTj_set[5][0]->Fill(jets_antikt_R5[i].pt());
+      for ( unsigned int i = 0; i < jets_antikt_R0.size(); ++i ) pTj_set[0][0]->Fill(jets_antikt_R0[i].pt());
+      for ( unsigned int i = 0; i < jets_antikt_R1.size(); ++i ) pTj_set[1][0]->Fill(jets_antikt_R1[i].pt());
+      for ( unsigned int i = 0; i < jets_antikt_R2.size(); ++i ) pTj_set[2][0]->Fill(jets_antikt_R2[i].pt());
+      for ( unsigned int i = 0; i < jets_antikt_R3.size(); ++i ) pTj_set[3][0]->Fill(jets_antikt_R3[i].pt());
+      for ( unsigned int i = 0; i < jets_antikt_R4.size(); ++i ) pTj_set[4][0]->Fill(jets_antikt_R4[i].pt());
+      for ( unsigned int i = 0; i < jets_antikt_R5.size(); ++i ) pTj_set[5][0]->Fill(jets_antikt_R5[i].pt());
 
       // --- fill numConst histograms
-      for ( int i = 0; i < jets_antikt_R0.size(); i++ ) numConst[0][0]->Fill(jets_antikt_R0[i].constituents().size());
-      for ( int i = 0; i < jets_antikt_R1.size(); i++ ) numConst[1][0]->Fill(jets_antikt_R1[i].constituents().size());
-      for ( int i = 0; i < jets_antikt_R2.size(); i++ ) numConst[2][0]->Fill(jets_antikt_R2[i].constituents().size());
-      for ( int i = 0; i < jets_antikt_R3.size(); i++ ) numConst[3][0]->Fill(jets_antikt_R3[i].constituents().size());
-      for ( int i = 0; i < jets_antikt_R4.size(); i++ ) numConst[4][0]->Fill(jets_antikt_R4[i].constituents().size());
-      for ( int i = 0; i < jets_antikt_R5.size(); i++ ) numConst[5][0]->Fill(jets_antikt_R5[i].constituents().size());
+      for ( unsigned int i = 0; i < jets_antikt_R0.size(); i++ ) numConst[0][0]->Fill(jets_antikt_R0[i].constituents().size());
+      for ( unsigned int i = 0; i < jets_antikt_R1.size(); i++ ) numConst[1][0]->Fill(jets_antikt_R1[i].constituents().size());
+      for ( unsigned int i = 0; i < jets_antikt_R2.size(); i++ ) numConst[2][0]->Fill(jets_antikt_R2[i].constituents().size());
+      for ( unsigned int i = 0; i < jets_antikt_R3.size(); i++ ) numConst[3][0]->Fill(jets_antikt_R3[i].constituents().size());
+      for ( unsigned int i = 0; i < jets_antikt_R4.size(); i++ ) numConst[4][0]->Fill(jets_antikt_R4[i].constituents().size());
+      for ( unsigned int i = 0; i < jets_antikt_R5.size(); i++ ) numConst[5][0]->Fill(jets_antikt_R5[i].constituents().size());
 
       // ----------------------------------------------------------------------------------------------------
 
@@ -164,7 +164,7 @@ int main()
               cout << "jet " << i << ": "<< jets[i].pt() << " " << jets[i].rap() << " " << jets[i].phi() << endl;
               vector<PseudoJet> constituents = jets[i].constituents();
               pTj->Fill(jets[i].pt());
-              int number_of_constituents = constituents.size();
+              unsigned int number_of_constituents = constituents.size();
               for (unsigned j = 0; j < number_of_constituents; j++)
                 {
                   cout << "    constituent " << j << "'s pt: " << constituents[j].pt() << endl;
