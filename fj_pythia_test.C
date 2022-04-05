@@ -63,7 +63,10 @@ int main()
   // --- Main event loop
   // -------------------
 
-  int n_events = 2;
+  ofstream fout;
+  fout.open("list_of_particles.txt");
+
+  int n_events = 1;
 
   for ( int iEvent = 0; iEvent < n_events; ++iEvent )
     {
@@ -101,7 +104,11 @@ int main()
           // add the particles to the FastJet PseudoJet object
           particles.push_back( PseudoJet( px, py, pz, E) );
 
+          fout << px << " " << py << " " << pz << endl;
+
         } // end loop over particles
+
+      fout.close();
 
       // ----------------------------------------------------------
       // --- Done collecting particles from event, now do jet stuff
@@ -110,6 +117,31 @@ int main()
       JetDefinition jet_def(antikt_algorithm, 0.7);
       ClusterSequence cs(particles, jet_def);
       vector<PseudoJet> jets = sorted_by_pt(cs.inclusive_jets());
+
+      // ----------------------------------------------------------------------------------------------------
+
+      fout.open("from_fastjet.txt");
+      if ( n_events < 6 )
+        {
+          // --- print out some infos
+          fout << "Clustering with " << jet_def.description() << endl;
+          // --- print the jets
+          fout <<   "        pt y phi" << endl;
+          for (unsigned i = 0; i < jets.size(); i++)
+            {
+              fout << "jet " << i << ": "<< jets[i].pt() << " " << jets[i].rap() << " " << jets[i].phi() << endl;
+              vector<PseudoJet> constituents = jets[i].constituents();
+              pTj->Fill(jets[i].pt());
+              unsigned int number_of_constituents = constituents.size();
+              for (unsigned j = 0; j < number_of_constituents; j++)
+                {
+                  fout << "    constituent " << j << "'s pt: " << constituents[j].pt() << endl;
+                } // loop over jet constituents
+            } // loop over jets
+        }
+      fout.close();
+
+      // ----------------------------------------------------------------------------------------------------
 
       // --- choose a jet definition
       JetDefinition jet_def_antikt_R0(antikt_algorithm, jet_radii[0]);
@@ -150,29 +182,6 @@ int main()
       for ( unsigned int i = 0; i < jets_antikt_R3.size(); i++ ) numConst[3][0]->Fill(jets_antikt_R3[i].constituents().size());
       for ( unsigned int i = 0; i < jets_antikt_R4.size(); i++ ) numConst[4][0]->Fill(jets_antikt_R4[i].constituents().size());
       for ( unsigned int i = 0; i < jets_antikt_R5.size(); i++ ) numConst[5][0]->Fill(jets_antikt_R5[i].constituents().size());
-
-      // ----------------------------------------------------------------------------------------------------
-
-      if ( n_events < 6 )
-        {
-          // --- print out some infos
-          cout << "Clustering with " << jet_def.description() << endl;
-          // --- print the jets
-          cout <<   "        pt y phi" << endl;
-          for (unsigned i = 0; i < jets.size(); i++)
-            {
-              cout << "jet " << i << ": "<< jets[i].pt() << " " << jets[i].rap() << " " << jets[i].phi() << endl;
-              vector<PseudoJet> constituents = jets[i].constituents();
-              pTj->Fill(jets[i].pt());
-              unsigned int number_of_constituents = constituents.size();
-              for (unsigned j = 0; j < number_of_constituents; j++)
-                {
-                  cout << "    constituent " << j << "'s pt: " << constituents[j].pt() << endl;
-                } // loop over jet constituents
-            } // loop over jets
-        }
-
-      // ----------------------------------------------------------------------------------------------------
 
       // --- all done
 
