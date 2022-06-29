@@ -19,7 +19,7 @@ using namespace Pythia8;
 using namespace std;
 
 
-
+// a variable called pi is included somewhere in fastjet
 //const double pi = 3.14159265358979323;
 
 int main()
@@ -46,7 +46,8 @@ int main()
   ofstream fout;
   fout.open("list_of_particles.txt");
 
-  // --- get ready for the next event
+  // --- need to call this to prepare to generate the event
+  // --- if this is not called the event will not be generated
   if ( !pythia.next() )
     {
       cout << "Um, oops?" << endl;
@@ -180,6 +181,8 @@ int main()
     }
 
   JetHistFile->Close();
+
+
 
   return 0;
 
