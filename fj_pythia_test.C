@@ -101,10 +101,16 @@ int main()
           //double E = p.e(); // MC only
           double E = sqrt(px*px + py*py + pz*pz); // can do this, assuming m=0, or assume m=m_pion
 
+          double y = 0.5*log((E+pz)/(E-pz));
+
           // add the particles to the FastJet PseudoJet object
           particles.push_back( PseudoJet( px, py, pz, E) );
 
-          fout << px << " " << py << " " << pz << endl;
+          if ( n_events == 1 )
+            {
+              //fout << px << " " << py << " " << pz << endl;
+              fout << "Event particle " << i << " px py pz " << px << " " << py << " " << pz << endl;
+            }
 
         } // end loop over particles
 
@@ -121,7 +127,7 @@ int main()
       // ----------------------------------------------------------------------------------------------------
 
       fout.open("from_fastjet.txt");
-      if ( n_events < 6 )
+      if ( n_events == 1 )
         {
           // --- print out some infos
           fout << "Clustering with " << jet_def.description() << endl;
@@ -135,7 +141,11 @@ int main()
               unsigned int number_of_constituents = constituents.size();
               for (unsigned j = 0; j < number_of_constituents; j++)
                 {
-                  fout << "    constituent " << j << "'s pt: " << constituents[j].pt() << endl;
+                  fout << "    constituent " << j << " px py pz " << constituents[j].px() << " " << constituents[j].py() << " " <<  constituents[j].pz() << endl;
+                  // fout << "    constituent " << j << "'s pt: " << constituents[j].pt() << endl;
+                  // fout << "    constituent " << j << "'s px: " << constituents[j].px() << endl;
+                  // fout << "    constituent " << j << "'s py: " << constituents[j].py() << endl;
+                  // fout << "    constituent " << j << "'s pz: " << constituents[j].pz() << endl;
                 } // loop over jet constituents
             } // loop over jets
         }
