@@ -1,0 +1,266 @@
+Clustering with Longitudinally invariant anti-kt algorithm with R = 0.7 and E scheme recombination
+        pt y phi
+jet 0: 30.072 -3.03175 3.53713
+    constituent 0 px py pz -0.350605 0.0640718 -4.97821
+    constituent 1 px py pz -1.21416 0.0651871 -16.5225
+    constituent 2 px py pz -0.0123752 -0.00712251 -0.0928186
+    constituent 3 px py pz -0.165068 -0.0420957 -2.61431
+    constituent 4 px py pz -0.468819 -0.0364413 -5.65916
+    constituent 5 px py pz -0.379594 -0.0674458 -4.95858
+    constituent 6 px py pz -1.28793 -0.110252 -12.8487
+    constituent 7 px py pz -0.266455 -0.246992 -3.06954
+    constituent 8 px py pz -0.379919 -0.0828506 -4.91097
+    constituent 9 px py pz -0.351388 -0.062206 -3.09921
+    constituent 10 px py pz -0.536252 -0.0919067 -5.13721
+    constituent 11 px py pz -0.17073 -0.0503632 -1.45192
+    constituent 12 px py pz -0.578794 -0.226534 -5.24038
+    constituent 13 px py pz -4.03207 -2.11381 -39.0024
+    constituent 14 px py pz -0.303393 -0.145191 -2.83335
+    constituent 15 px py pz -0.190158 -0.143067 -2.33869
+    constituent 16 px py pz -0.447421 -0.228982 -4.90688
+    constituent 17 px py pz -0.991621 -0.555877 -11.3949
+    constituent 18 px py pz -0.715632 -0.359504 -8.18834
+    constituent 19 px py pz -1.28888 -0.689236 -16.0645
+    constituent 20 px py pz -4.77495 -2.30599 -58.1716
+    constituent 21 px py pz -6.49112 -3.09036 -76.0704
+    constituent 22 px py pz -2.35278 -1.05993 -27.9283
+jet 1: 27.0704 -2.82689 0.691676
+    constituent 0 px py pz 0.632831 0.0531819 -6.51466
+    constituent 1 px py pz 0.530593 0.374749 -3.12569
+    constituent 2 px py pz 1.013 0.906696 -17.971
+    constituent 3 px py pz 0.920555 1.19818 -17.9748
+    constituent 4 px py pz 1.03694 1.10586 -8.58253
+    constituent 5 px py pz 0.0806896 0.0241609 -0.74157
+    constituent 6 px py pz 0.372602 0.129233 -3.64868
+    constituent 7 px py pz 0.127685 0.0431126 -1.13712
+    constituent 8 px py pz 0.816876 0.440614 -9.74571
+    constituent 9 px py pz 0.516861 0.215956 -5.01395
+    constituent 10 px py pz 0.448379 0.436202 -6.9821
+    constituent 11 px py pz 0.355657 0.535383 -4.52839
+    constituent 12 px py pz 0.925752 0.875011 -11.8842
+    constituent 13 px py pz 1.94613 1.78262 -26.4681
+    constituent 14 px py pz 2.87993 3.33442 -35.5846
+    constituent 15 px py pz 0.334004 0.3491 -3.23983
+    constituent 16 px py pz 1.35285 1.03898 -14.7098
+    constituent 17 px py pz 0.459661 0.289205 -4.5855
+    constituent 18 px py pz 1.12222 0.70773 -11.0945
+    constituent 19 px py pz 3.03707 2.06391 -27.4211
+    constituent 20 px py pz 1.93872 1.36197 -15.8403
+jet 2: 5.48054 0.285729 4.52718
+    constituent 0 px py pz 0.098765 -0.266706 0.0106158
+    constituent 1 px py pz -0.154342 -0.364296 0.313772
+    constituent 2 px py pz 0.0152132 -0.0984708 0.0843762
+    constituent 3 px py pz -9.13556e-05 -0.0179254 0.00956312
+    constituent 4 px py pz -0.00549286 -0.11199 0.0797458
+    constituent 5 px py pz 0.0432672 -0.819636 0.543215
+    constituent 6 px py pz 0.000826508 -0.148429 0.114601
+    constituent 7 px py pz 0.0228176 -0.266377 -0.00901346
+    constituent 8 px py pz -0.00730126 -0.543143 0.194897
+    constituent 9 px py pz -0.0858674 -0.41369 0.205603
+    constituent 10 px py pz -0.014054 -0.0958019 -0.0266391
+    constituent 11 px py pz -0.0946064 -0.108234 0.0189672
+    constituent 12 px py pz -0.148773 -0.406712 0.152391
+    constituent 13 px py pz -0.679633 -1.7254 0.0113947
+jet 3: 3.76869 -2.10689 6.20476
+    constituent 0 px py pz 0.253376 -0.0220457 -0.540752
+    constituent 1 px py pz 0.111791 0.0488102 -0.429223
+    constituent 2 px py pz 0.210762 -0.0831318 -0.661011
+    constituent 3 px py pz 0.115826 -0.0689374 -0.605304
+    constituent 4 px py pz 0.561028 -0.193211 -2.1395
+    constituent 5 px py pz 1.93453 -0.00453385 -9.57928
+    constituent 6 px py pz 0.569798 0.0278068 -2.01859
+jet 4: 2.90169 -3.2203 5.93074
+    constituent 0 px py pz 0.332623 -0.0787858 -3.40958
+    constituent 1 px py pz 1.72348 -0.636809 -22.6204
+    constituent 2 px py pz 0.667224 -0.286049 -10.4833
+jet 5: 2.69622 5.15983 0.218948
+    constituent 0 px py pz 0.272466 0.141247 39.3845
+    constituent 1 px py pz 0.216177 0.0278562 11.9129
+    constituent 2 px py pz 1.55362 0.435358 145.604
+    constituent 3 px py pz 0.589585 -0.018835 45.2595
+jet 6: 2.6934 -2.00406 1.39929
+    constituent 0 px py pz 0.0815713 0.435551 -2.81863
+    constituent 1 px py pz 0.280006 0.561715 -2.96249
+    constituent 2 px py pz 0.0918998 0.190475 -0.5578
+    constituent 3 px py pz 0.00888285 0.631157 -2.39131
+    constituent 4 px py pz -0.0185826 0.142305 -0.237212
+    constituent 5 px py pz 0.033813 0.607871 -1.51832
+    constituent 6 px py pz -0.0179086 0.0848049 -0.209407
+jet 7: 2.09515 -3.11075 2.82237
+    constituent 0 px py pz -0.12608 0.0122012 -0.789914
+    constituent 1 px py pz -0.193818 0.0571032 -1.29726
+    constituent 2 px py pz -0.607768 0.259859 -6.45687
+    constituent 3 px py pz -0.31515 0.135513 -5.16639
+    constituent 4 px py pz -0.746482 0.192838 -10.9197
+jet 8: 2.00779 4.25222 0.840022
+    constituent 0 px py pz 0.10317 0.405415 12.7143
+    constituent 1 px py pz 0.488993 0.242219 18.0544
+    constituent 2 px py pz 0.557701 0.642292 31.2918
+    constituent 3 px py pz 0.190226 0.205186 11.9054
+jet 9: 1.85311 -0.480315 4.84771
+    constituent 0 px py pz 0.049432 -0.0681318 -0.0329521
+    constituent 1 px py pz -0.0676486 -0.281809 -0.150333
+    constituent 2 px py pz 0.0630827 -0.254082 -0.218168
+    constituent 3 px py pz 0.150882 -0.768293 -0.250746
+    constituent 4 px py pz 0.0542522 -0.463854 -0.301338
+jet 10: 1.84579 -0.393197 2.27466
+    constituent 0 px py pz -0.708561 0.348876 -0.395247
+    constituent 1 px py pz -0.00942482 0.0481627 0.00959115
+    constituent 2 px py pz -0.0122316 0.0284154 0.000349566
+    constituent 3 px py pz -0.340322 0.814646 -0.321782
+    constituent 4 px py pz -0.123998 0.167032 -0.0899362
+jet 11: 1.69428 0.74229 5.24141
+    constituent 0 px py pz 0.0549843 -0.0278799 0.0730054
+    constituent 1 px py pz 0.0170255 -0.00988525 0.0258886
+    constituent 2 px py pz 0.117753 -0.125219 0.0503765
+    constituent 3 px py pz 0.119607 -0.0939835 0.0809766
+    constituent 4 px py pz 0.545714 -1.20571 1.19745
+jet 12: 1.62601 2.24321 5.7817
+    constituent 0 px py pz 0.390362 0.00294994 1.82574
+    constituent 1 px py pz 0.464407 -0.251128 3.11392
+    constituent 2 px py pz 0.511118 -0.513434 2.8664
+    constituent 3 px py pz 0.0599114 -0.0200607 0.253769
+jet 13: 1.57612 -2.65223 4.24297
+    constituent 0 px py pz -0.343098 -0.768343 -7.52946
+    constituent 1 px py pz -0.296055 -0.533577 -3.26339
+    constituent 2 px py pz -0.0738333 -0.103713 -0.704648
+jet 14: 1.45788 -2.95216 1.87628
+    constituent 0 px py pz -0.108919 0.198742 -3.1939
+    constituent 1 px py pz -0.298339 0.468856 -4.72469
+    constituent 2 px py pz -0.0509769 0.561951 -5.40344
+    constituent 3 px py pz 0.0197694 0.160835 -1.30445
+jet 15: 1.31781 6.70381 3.17256
+    constituent 0 px py pz -1.31718 -0.0407985 537.343
+jet 16: 1.23368 -7.88314 5.90331
+    constituent 0 px py pz 1.14573 -0.457454 -1635.97
+jet 17: 1.20485 3.21112 2.04453
+    constituent 0 px py pz -0.550778 1.03126 14.3863
+    constituent 1 px py pz 0.0011092 0.0409019 0.606381
+jet 18: 1.18389 3.38551 5.59897
+    constituent 0 px py pz 0.168624 -0.178476 4.5673
+    constituent 1 px py pz 0.233493 -0.25389 4.47882
+    constituent 2 px py pz 0.515302 -0.315931 8.71921
+jet 19: 1.09948 6.17433 1.9224
+    constituent 0 px py pz -0.120365 0.148754 48.5352
+    constituent 1 px py pz -0.222353 0.707929 169.197
+    constituent 2 px py pz -0.0359508 0.175536 50.253
+jet 20: 1.06946 -4.07191 2.56673
+    constituent 0 px py pz -0.0476583 0.00515381 -1.33356
+    constituent 1 px py pz -0.10006 0.0597682 -2.626
+    constituent 2 px py pz -0.071637 0.0278821 -2.69911
+    constituent 3 px py pz -0.678208 0.48868 -25.0982
+jet 21: 1.02813 -4.28672 1.14777
+    constituent 0 px py pz 0.0346734 0.0402432 -1.21945
+    constituent 1 px py pz 0.146014 0.247092 -11.8023
+    constituent 2 px py pz 0.241386 0.650164 -24.8481
+jet 22: 0.86461 -6.98574 0.0486016
+    constituent 0 px py pz 0.205731 -0.0467469 -101.808
+    constituent 1 px py pz 0.657858 0.0887518 -372.031
+jet 23: 0.831852 -5.5431 3.82882
+    constituent 0 px py pz -0.203328 -0.158118 -44.1185
+    constituent 1 px py pz -0.179819 -0.143277 -22.774
+    constituent 2 px py pz -0.259879 -0.22633 -41.8336
+jet 24: 0.803942 -0.306862 0.0790489
+    constituent 0 px py pz 0.0713562 -0.0226468 -0.0606822
+    constituent 1 px py pz 0.0698796 -0.0370822 -0.0147344
+    constituent 2 px py pz 0.143986 0.045445 -0.11912
+    constituent 3 px py pz 0.326346 0.109002 -0.0136095
+    constituent 4 px py pz 0.189864 -0.0312339 -0.0645733
+jet 25: 0.802136 -5.96458 0.606765
+    constituent 0 px py pz 0.452581 0.418013 -111.699
+    constituent 1 px py pz 0.206371 0.0393749 -50.3427
+jet 26: 0.787684 3.71972 4.85227
+    constituent 0 px py pz 0.140312 -0.701987 15.1669
+    constituent 1 px py pz -0.0304857 -0.0780026 1.3688
+jet 27: 0.7696 -1.63565 4.15337
+    constituent 0 px py pz -0.297149 -0.408923 -1.39858
+    constituent 1 px py pz -0.111014 -0.243524 -0.530555
+jet 28: 0.768231 6.49867 5.33427
+    constituent 0 px py pz 0.196173 -0.164241 124.66
+    constituent 1 px py pz 0.25137 -0.460166 143.95
+jet 29: 0.733282 8.29069 0.139611
+    constituent 0 px py pz 0.726147 0.102042 1461.65
+jet 30: 0.678191 1.62254 3.66226
+    constituent 0 px py pz -0.0759033 -0.0280237 0.349175
+    constituent 1 px py pz -0.468848 -0.283459 1.18888
+    constituent 2 px py pz -0.0435727 -0.0258877 0.15655
+jet 31: 0.648741 3.06211 0.41606
+    constituent 0 px py pz 0.178247 0.029181 1.86837
+    constituent 1 px py pz 0.415149 0.233014 5.13506
+jet 32: 0.645189 4.77233 2.89915
+    constituent 0 px py pz -0.158178 0.0307458 15.7436
+    constituent 1 px py pz -0.208423 0.00240347 9.05329
+    constituent 2 px py pz -0.25972 0.121744 15.8477
+jet 33: 0.615866 1.70091 2.87396
+    constituent 0 px py pz -0.0648688 0.0665478 0.324358
+    constituent 1 px py pz -0.00573439 0.00254239 0.0136589
+    constituent 2 px py pz -0.127802 0.0416246 0.283271
+    constituent 3 px py pz -0.395536 0.0521506 1.07066
+jet 34: 0.587989 -4.78982 2.71657
+    constituent 0 px py pz -0.11486 0.0999601 -9.27261
+    constituent 1 px py pz -0.420816 0.142492 -26.6025
+jet 35: 0.569767 -7.43855 3.31717
+    constituent 0 px py pz -0.561008 -0.0995258 -484.384
+jet 36: 0.535604 2.9132 4.97205
+    constituent 0 px py pz 0.137517 -0.517649 4.9172
+jet 37: 0.524575 -4.96553 5.26935
+    constituent 0 px py pz 0.266789 -0.406276 -33.9661
+    constituent 1 px py pz 0.0105072 -0.0390167 -3.91923
+jet 38: 0.512315 -4.32974 0.198165
+    constituent 0 px py pz 0.502289 0.10086 -19.4453
+jet 39: 0.509898 4.51639 6.0599
+    constituent 0 px py pz 0.423486 -0.0705172 18.2909
+    constituent 1 px py pz 0.0737537 -0.0423911 5.5341
+jet 40: 0.497125 6.58233 4.57487
+    constituent 0 px py pz -0.0681496 -0.492432 179.517
+jet 41: 0.491299 -5.74659 2.93551
+    constituent 0 px py pz -0.453063 0.0902345 -71.6042
+    constituent 1 px py pz -0.0278403 0.0102977 -5.42707
+jet 42: 0.469672 0.146191 3.67031
+    constituent 0 px py pz -0.40554 -0.236916 0.0689066
+jet 43: 0.447052 7.82373 3.87097
+    constituent 0 px py pz -0.333318 -0.297917 558.638
+jet 44: 0.432203 4.14234 2.21509
+    constituent 0 px py pz -0.259596 0.345556 13.6001
+jet 45: 0.429085 -3.82215 3.73087
+    constituent 0 px py pz -0.356717 -0.238468 -9.80038
+jet 46: 0.312282 -1.63052 3.39424
+    constituent 0 px py pz -0.302368 -0.0780602 -0.766757
+jet 47: 0.284345 0.965531 4.04495
+    constituent 0 px py pz -0.176004 -0.223327 0.319234
+jet 48: 0.260484 7.30377 1.87292
+    constituent 0 px py pz -0.0570253 0.21175 149.622
+    constituent 1 px py pz -0.0204805 0.0369365 48.2102
+jet 49: 0.254825 -6.73342 5.61834
+    constituent 0 px py pz 0.200551 -0.157211 -107.028
+jet 50: 0.235098 4.93302 5.10381
+    constituent 0 px py pz 0.048196 -0.146574 11.6618
+    constituent 1 px py pz 0.0414936 -0.0707438 4.84915
+jet 51: 0.212597 -5.60774 4.65681
+    constituent 0 px py pz -0.01181 -0.212268 -28.9689
+jet 52: 0.207405 0.673479 2.25057
+    constituent 0 px py pz -0.130379 0.161301 0.150484
+jet 53: 0.199178 -2.18488 4.85224
+    constituent 0 px py pz 0.00148911 -0.0165693 -0.0565468
+    constituent 1 px py pz 0.0262753 -0.180664 -0.820104
+jet 54: 0.185376 -0.846354 0.619489
+    constituent 0 px py pz 0.0468649 0.063517 -0.055942
+    constituent 1 px py pz 0.104064 0.0441159 -0.12886
+jet 55: 0.178804 5.87729 4.232
+    constituent 0 px py pz -0.0826305 -0.158566 31.9022
+jet 56: 0.149584 -5.47802 6.19118
+    constituent 0 px py pz 0.148952 -0.0137424 -17.9028
+jet 57: 0.133922 1.27963 0.121934
+    constituent 0 px py pz 0.132927 0.0162892 0.22212
+jet 58: 0.103545 0.963479 3.15498
+    constituent 0 px py pz -0.103535 -0.00138586 0.115931
+jet 59: 0.0974568 -1.30933 2.44235
+    constituent 0 px py pz -0.0745865 0.0627271 -0.167318
+jet 60: 0.075452 -0.855892 3.09008
+    constituent 0 px py pz -0.0753519 0.00388517 -0.0727571
+jet 61: 0.0451407 2.31737 4.24458
+    constituent 0 px py pz -0.0203555 -0.0402907 0.226843
+jet 62: 0.034247 -0.119386 5.59687
+    constituent 0 px py pz 0.026493 -0.0217019 -0.00409831
+jet 63: 0.0314469 -8.03044 4.15119
+    constituent 0 px py pz -0.0167362 -0.0266234 -48.3196
